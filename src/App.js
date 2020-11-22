@@ -1,19 +1,34 @@
 import {motion} from 'framer-motion';
+import Main from './components/Main';
+import Nav from './components/Nav';
+import About from './components/About';
+import Contact from './components/Contact'
+import Footer from './components/Footer';
+import {Route, Switch} from 'react-router-dom';
+
 import './App.css';
 
 function App() {
   return (
-    <motion.div 
-    initial={{scale: 0}}
-    animate={{rotate: 360, scale: 1}}
-    transition={{
-      type: 'spring',
-      stiffness: 260,
-      damping: 20,
-      duration: 3
-    }}>
-    <h1>Blackout's React Framer Motion Practice</h1>
-    </motion.div>
+    <div>
+      <Nav />
+
+      <Switch>          
+        <Route path='/' exact>
+          <Main />
+        </Route>
+
+        <Route path='/about'>
+          <About />
+        </Route>
+
+        <Route path='/contact'> 
+          <Contact />
+        </Route>
+      </Switch>
+
+        <Footer />
+    </div>
   
   );
 }
