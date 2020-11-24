@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Nav = () => {
     return (
-        <div className='navContainer'>
+        <NavContainer className='navContainer'>
             <NavLinks className='navLinks'>
                 <Empty className='emptyDiv'>Empty Part</Empty>
                 <NavDiv className='navDiv'>
@@ -13,11 +13,18 @@ const Nav = () => {
                     <NavLi to='/contact'>Contact Us</NavLi>
                 </NavDiv>
             </NavLinks>
-        </div>
+        </NavContainer>
     )
 }
 
 //Style Nav Component
+const NavContainer = styled.div`
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+`
+
 const NavLinks = styled.div`
     height: 6.5rem;
     width: 100%;
@@ -26,6 +33,8 @@ const NavLinks = styled.div`
     color: #74d660;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 `
 
 const Empty = styled.div`

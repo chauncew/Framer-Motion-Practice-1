@@ -25,3 +25,9 @@ export const pageAnimation2 = {
         }
     }
 }
+
+  export const titleAnimation = {
+        hidden: {x: 800},
+        show: {x: 0, transition: {type: 'spring', duration: 2}}
+    }
+
